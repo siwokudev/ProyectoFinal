@@ -1,0 +1,35 @@
+.miOrdenProductoPrecio{
+    text-align: right;
+    padding: 0px 15px;
+}
+
+.miOrdenProductoImagen > img{
+    width: 100%;
+}
+
+.miOrdenProductoDescripcion{
+    text-align: justify;
+}
+
+.miOrdenProductoBoton{
+    text-align: right;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+  }
+
+  .miHR{
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .form-group{
+      text-align: right;
+  }
+
+  .miOrdenTotal{
+      text-align: right;
+  }
