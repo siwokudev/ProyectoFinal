@@ -6,7 +6,7 @@ $( document ).ready(function(){
 });
 
 function AgregarAlCarrito(){
-    $("#misProductos").append($producto);
+    $("#misProductos").append("prueba");
 }
 
 var $producto = $("<div class='miOrdenProducto' />")
