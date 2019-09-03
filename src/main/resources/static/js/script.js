@@ -12,7 +12,7 @@ function enviarPet()
 	alert("tipo bebida request");
     console.log("boton picado" + btnAgregar.value);
     var opcion = document.querySelector("#opcion").value;
-    xhr.open("Get", "tipo-bebida/tipo/"+opcion);
+    xhr.open("GET", "producto/nombre/"+opcion);
 	xhr.onload = functionCallBack;
 	xhr.send(null);
 }
