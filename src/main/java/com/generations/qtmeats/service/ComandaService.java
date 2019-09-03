@@ -55,7 +55,8 @@ public class ComandaService {
 			
 			System.out.println("Producto id es " + producto.getId());
 			
-			Optional<Producto> optProducto = prodRepo.findById(producto.getId());
+			//Optional<Producto> optProducto = prodRepo.findById(producto.getId());
+			Optional<Producto> optProducto = prodRepo.findByNombre(producto.getNombre());
 			
 			if (optProducto.isPresent()) {
 				Producto pro = optProducto.get();

@@ -33,6 +33,20 @@ public class ProductoService {
 		return producto;
 	}
 	
+	public Producto getByNombre(String nombre) {
+		Producto producto = null;
+		Optional<Producto> opt = repo.findByNombre(nombre);
+		
+		if(opt.isPresent()) {
+			producto = opt.get();
+		} else {
+			producto = new Producto();
+			producto.setId(-1);
+		}
+		
+		return producto;
+	}
+	
 	public Producto save(Producto producto) {
 		
 		repo.save(producto);

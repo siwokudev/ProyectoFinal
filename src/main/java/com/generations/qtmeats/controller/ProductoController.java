@@ -32,6 +32,11 @@ public class ProductoController {
 		return service.getById(id);
 	}
 	
+	@GetMapping(value = "/nombre/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Producto doGetByNombre(@PathVariable("nombre") String nombre) {
+		return service.getByNombre(nombre);
+	}
+	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Producto doPost(@RequestBody Producto producto) {
 		
