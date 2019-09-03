@@ -32,6 +32,11 @@ public class TipoBebidaController {
 		return service.getById(id);
 	}
 	
+	@GetMapping(value = "/tipo/{tipo}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public TipoBebida doGetById(@PathVariable("tipo") String tipo) {
+		return service.getByTipo(tipo);
+	}
+	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public TipoBebida doPost(@RequestBody TipoBebida tipo) {
 		return service.save(tipo);

@@ -32,6 +32,19 @@ public class TipoBebidaService {
 		return tipoBebida;
 	}
 	
+	public TipoBebida getByTipo(String tipo) {
+		TipoBebida tipoBebida = null;
+		Optional<TipoBebida> opt = repo.findByTipo(tipo);
+		if(opt.isPresent()) {
+			tipoBebida = opt.get();
+		} else {
+			tipoBebida = new TipoBebida();
+			tipoBebida.setId(-1);
+		}
+		
+		return tipoBebida;
+	}
+	
 	public TipoBebida save(TipoBebida tipo) {
 		TipoBebida tipoBebida = new TipoBebida();
 		Optional<TipoBebida> opt = repo.findById(tipo.getId());
