@@ -28,6 +28,7 @@ CREATE TABLE `comanda` (
   `total` float NOT NULL,
   `comentarios` varchar(250) DEFAULT NULL,
   `direccion` varchar(250) DEFAULT NULL,
+  `estado` smallint(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_comanda_usuario1_idx` (`usuario`),
   CONSTRAINT `fk_comanda_usuario1` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`id`)
@@ -40,7 +41,7 @@ CREATE TABLE `comanda` (
 
 LOCK TABLES `comanda` WRITE;
 /*!40000 ALTER TABLE `comanda` DISABLE KEYS */;
-INSERT INTO `comanda` VALUES (11,2,900,'comentarios','orandino 214'),(12,2,900,'comentarios','orandino 214'),(13,2,900,'comentarios','orandino 214'),(15,2,900,'comentarios','orandino 214'),(16,2,900,'comentarios','orandino 214'),(17,2,900,'comentarios','orandino 214');
+INSERT INTO `comanda` VALUES (11,2,900,'comentarios','orandino 214',0),(12,2,900,'comentarios','orandino 214',0),(13,2,900,'comentarios','orandino 214',0),(15,2,900,'comentarios','orandino 214',0),(16,2,900,'comentarios','orandino 214',1),(17,2,900,'comentarios','orandino 214',1);
 /*!40000 ALTER TABLE `comanda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,4 +246,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-02 23:22:20
+-- Dump completed on 2019-09-03  0:05:15

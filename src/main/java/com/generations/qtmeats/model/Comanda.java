@@ -29,6 +29,9 @@ public class Comanda {
 
 	@Column(name = "direccion", nullable = true)
 	private String direccionEntrega;
+	
+	@Column(name = "estado", nullable = false)
+	private Integer estado;
 
 	@ManyToMany(cascade = {CascadeType.ALL}, fetch= FetchType.EAGER)
 	@JoinTable(name = "comanda_has_producto",
@@ -74,6 +77,14 @@ public class Comanda {
 
 	public void setDireccionEntrega(String direccionEntrega) {
 		this.direccionEntrega = direccionEntrega;
+	}
+
+	public Integer getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Integer estado) {
+		this.estado = estado;
 	}
 
 	public List<Producto> getProductos() {

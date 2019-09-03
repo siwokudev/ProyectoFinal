@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {
@@ -22,6 +24,7 @@ public class Usuario {
 	@Column(name = "correo", nullable = false, unique = true)
 	private String correo;
 	
+	@JsonIgnore
 	@Column(name = "contraseña", nullable = false)
 	private String contrasena;
 	

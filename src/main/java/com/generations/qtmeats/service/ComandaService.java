@@ -30,6 +30,10 @@ public class ComandaService {
 		return (List<Comanda>) repo.findAll();
 	}
 	
+	public List<Comanda> getAllByEstado(Integer estado){
+		return repo.findAllByEstado(estado);
+	}
+	
 	public Comanda getById(Integer id) {
 		Comanda comanda = null;
 		Optional<Comanda> opt = repo.findById(id);
@@ -86,6 +90,21 @@ public class ComandaService {
 		return comanda;
 	}
 	
+	public Comanda update(Comanda comanda, Integer id) {
+		Comanda objComanda = null;
+		Optional <Comanda> opt = repo.findById(id);
+		
+		if(opt.isPresent()) {
+			objComanda = opt.get();
+			objComanda.setEstado(comanda.getEstado());
+			repo.save(objComanda);
+		} else {
+			objComanda = new Comanda();
+			objComanda.setId(-1);
+		}
+		
+		return objComanda;
+	}
 	
 	public void delete(Integer id) {
 		Optional<Comanda> opt = repo.findById(id);
