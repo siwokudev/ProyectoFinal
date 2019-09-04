@@ -6,13 +6,13 @@ $(document).ready(function() {
 
 let _selectedComida;
 
-function addUpdateEvent($element, comida) {
+function addUpdateComidaEvent($element, comida) {
 	$element.on("click", function() {
 		updateComida(comida);
 	});
 }
 
-function addDeleteEvent($element, comida) {
+function addDeleteComidaEvent($element, comida) {
 	$element.on("click", function() {
 		deleteComida(comida);
 	});
@@ -45,9 +45,9 @@ function setComidas(producto) {
 	producto
 			.forEach(function(producto) {
 				const $btnModificar = $("<button class='btnModificar btn btn-primary' type='button'>Modificar</button>");
-				addUpdateEvent($btnModificar, producto);
+				addUpdateComidaEvent($btnModificar, producto);
 				const $btnBorrar = $("<button class='btnBorrar btn btn-danger' type='button'>Borrar</button>");
-				addDeleteEvent($btnBorrar, producto);
+				addDeleteComidaEvent($btnBorrar, producto);
 
 				// $tableBody.append($("<tr />").addClass(claseEstado) //para
 				// cambair el color dependiendo del estado
@@ -70,20 +70,24 @@ function setComidas(producto) {
 
 function updateComida(comida) {
 	_selectedComida = comida;
-	$("#estadoComidaSelect").val(comida.estado);
+	$("#comidaModNombre").val(comida.nombre);
+	$("#comidaModPrecio").val(comida.precio);
+
 	$("#modificarComidaModal").modal("show");
 }
 
 function updateComidaSend() {
 	alert("Update comida send funcionalidad faltante");
-	//const estado = parseInt($("#estadoComidaSelect").val(), 10);
-/*
+	const precio = parseInt($("#comidaModPrecio").val(), 10);
+	const nombre = $("#comidaModNombre").val();
+
 	$.ajax({
 		method : "PUT",
 		url : "/producto/" + _selectedComida.id,
 		contentType : "application/json",
 		data : JSON.stringify({
-			//enviar nuevo producto
+			nombre: nombre,
+			precio: precio
 		})
 	}).done(function(msg) {
 		requestComida();
@@ -91,7 +95,7 @@ function updateComidaSend() {
 	}).fail(function(err) {
 		console.log(err);
 	});
-*/
+
 	$("#modificarComidaModal").modal("hide");
 }
 

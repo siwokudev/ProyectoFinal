@@ -6,13 +6,13 @@ $(document).ready(function() {
 
 let _selectedComanda;
 
-function addUpdateEvent($element, comanda) {
+function addUpdateComandaEvent($element, comanda) {
 	$element.on("click", function() {
 		updateComanda(comanda);
 	});
 }
 
-function addDeleteEvent($element, comanda) {
+function addDeleteComandaEvent($element, comanda) {
 	$element.on("click", function() {
 		deleteComanda(comanda);
 	});
@@ -39,9 +39,9 @@ function setComandas(comandas) {
 	comandas
 			.forEach(function(comanda) {
 				const $btnModificar = $("<button class='btnModificar btn btn-primary' type='button'>Modificar</button>");
-				addUpdateEvent($btnModificar, comanda);
+				addUpdateComandaEvent($btnModificar, comanda);
 				const $btnBorrar = $("<button class='btnBorrar btn btn-danger' type='button'>Borrar</button>");
-				addDeleteEvent($btnBorrar, comanda);
+				addDeleteComandaEvent($btnBorrar, comanda);
 
 				// $tableBody.append($("<tr />").addClass(claseEstado) //para
 				// cambair el color dependiendo del estado
