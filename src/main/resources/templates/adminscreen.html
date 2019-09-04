@@ -34,36 +34,36 @@
 					<ul class="navbar-nav ml-auto" id="adminNav">
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#comanda" id="btnComandaGrl">Comanda</a></li>
+							href="#" id="btnComandaGrl">Comanda</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#bebidas" id="btnBebidasGrl">Bebidas</a></li>
+							href="#" id="btnBebidasGrl">Bebidas</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#dulces" id="btnDulcesGrl">Dulces</a></li>
+							href="#" id="btnDulcesGrl">Dulces</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#comidas" id="btnComidasGrl">Comidas</a></li>
+							href="#" id="btnComidasGrl">Comidas</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#tipoDeBebida" id="btnTipoBebidasGrl">Tipo de bebida</a></li>
+							href="#" id="btnTipoBebidasGrl">Tipo de bebida</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#tipoDeComida" id="btnTipoComidaGrl">Tipo de comida</a></li>
+							href="#" id="btnTipoComidaGrl">Tipo de comida</a></li>
 
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="#TipoDeDulces" id="btnTipoDulceGrl">Tipo de dulces</a></li>
+							href="#" id="btnTipoDulceGrl">Tipo de dulces</a></li>
 
 						<!--Logout Button Nav-->
 						<li class="nav-item mx-0 mx-lg-1"><a
 							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-							href="file:///C:/Users/Putito/Desktop/Desktop/Generation/Project/GIT%202/ProyectoFinal/WebContent/login.html#signIn">Logout</a>
+							href="/">Logout</a>
 						</li>
 
 					</ul>
@@ -72,11 +72,12 @@
 		</div>
 	</nav>
 	<header>
-		<div id="resultRequest" name="resultRequest">
+		<div id="resultRequest" >
 			<h1 class="display-1">Administrador</h1>
 		</div>
 	</header>
 
+	<!-- Modal para modificar comanda -->
 	<div id="modificarComandaModal" class="modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -106,6 +107,31 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- Modal para modificar comida -->
+	<div id="modificarComidaModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Comida</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						aqui mero
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModComida" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
@@ -122,7 +148,12 @@
 	<script src="js/freelancer.min.js"></script>
 
 	<!-- <script src="js/script.js"></script> -->
-	<script src="js/adminPageScript.js"></script>
+
+	<script src="js/adminPage/comanda.js"></script>
+	<script src="js/adminPage/comidas.js"></script>
+	<script src="js/adminPage/bebidas.js"></script>
+	<script src="js/adminPage/dulces.js"></script>
+	
 
 </body>
 
