@@ -1,0 +1,21 @@
+#adminPageTitle{
+	text-align: center;
+}
+
+#adminNav{
+	text-align: center;
+}
+
+.table{
+	background-color: white;
+}
+
+.listaProductos{
+	text-align: left;
+}
+
+.modal-body,
+.modal-header,
+.modal-footer {
+	padding: 1rem;
+}

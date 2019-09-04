@@ -12,7 +12,7 @@ function enviarPet()
 	//alert("tipo bebida request");
     console.log("boton picado" + btnAgregar.value);
     var opcion = document.querySelector("#opcion").value;
-    xhr.open("GET", "producto/nombre/"+opcion);
+    xhr.open("GET", "producto/nombre/" + opcion);
 	xhr.onload = functionCallBack;
 	xhr.send(null);
 }
@@ -23,6 +23,7 @@ function functionCallBack()
     console.log(opcion, comentarios);
 	if(xhr.status == 200)
 	{
+		/*<div> <h2> miObj.nombre.value <h2>*/
 		document.querySelector("#miOrdenResultado").innerHTML = xhr.responseText;
 	}
 }
