@@ -1,0 +1,41 @@
+[33mcommit aa853b02302e2aa92f9f4e7e7ef12cc245cdb7f3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: siwokudev <ajimenez101287@gmail.com>
+Date:   Tue Sep 3 16:20:09 2019 -0500
+
+    admin index y login agregado
+
+[33mcommit 43765d6df651118532c65406a27a1b6af985b4d6[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/frontEnd[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mfrontEnd[m[33m)[m
+Author: siwokudev <ajimenez101287@gmail.com>
+Date:   Tue Sep 3 14:11:17 2019 -0500
+
+    peticion del ajax funcionando
+
+[33mcommit 024c987cd0391187c8bcf5488e2920ed862e6536[m
+Author: siwokudev <ajimenez101287@gmail.com>
+Date:   Tue Sep 3 12:26:53 2019 -0500
+
+    juntado el front con el back, listo para hacer funcionalidades
+
+[33mcommit 42dfdade30083776d2c9a9f54e6d95d011dc52bf[m
+Author: siwokudev <ajimenez101287@gmail.com>
+Date:   Tue Sep 3 12:07:57 2019 -0500
+
+    antes de quitar dependencia thymeleaft
+
+[33mcommit 68901302f7d3570675e873eee87572589ac3d66c[m
+Author: siwokudev <ajimenez101287@gmail.com>
+Date:   Tue Sep 3 11:20:23 2019 -0500
+
+    buscar producto por nombre agregado al controller
+
+[33mcommit 5b1826bd1727cfca7174255d9910b937a0e438e5[m
+Author: siwoku <ajimenez101287@gmail.com>
+Date:   Tue Sep 3 00:12:55 2019 -0500
+
+    estado de comanda agregado, contraseña de usuario oculta
+
+[33mcommit 045c81bd3045bfaac32b79ab6a852e1db0d13188[m
+Author: siwoku <ajimenez101287@gmail.com>
+Date:   Mon Sep 2 23:25:18 2019 -0500
+
+    comit inicial, cruds proyecto final terminado

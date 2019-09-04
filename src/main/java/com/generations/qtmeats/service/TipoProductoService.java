@@ -21,9 +21,23 @@ public class TipoProductoService {
 		
 	}
 	
-	public TipoProducto getBtId(Integer id) {
+	public TipoProducto getById(Integer id) {
 		TipoProducto tipoProducto = null;
 		Optional<TipoProducto> opt = repo.findById(id);
+		
+		if(opt.isPresent()) {
+			tipoProducto = opt.get();
+		} else {
+			tipoProducto = new TipoProducto();
+			tipoProducto.setId(-1);
+		}
+		
+		return tipoProducto;
+	}
+	
+	public TipoProducto getByTipo(String tipo) {
+		TipoProducto tipoProducto = null;
+		Optional<TipoProducto> opt = repo.findByTipo(tipo);
 		
 		if(opt.isPresent()) {
 			tipoProducto = opt.get();

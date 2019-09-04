@@ -31,9 +31,16 @@ public class TipoProductoController {
 	}
 	
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public TipoProducto doGetById(Integer id) {
+	public TipoProducto doGetById(@PathVariable("id") Integer id) {
 		
-		return service.getBtId(id);
+		return service.getById(id);
+		
+	}
+	
+	@GetMapping(value = "/tipo/{tipo}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public TipoProducto doGetByTipo(@PathVariable("tipo") String tipo) {
+		
+		return service.getByTipo(tipo);
 		
 	}
 

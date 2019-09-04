@@ -37,6 +37,19 @@ public class ProductoController {
 		return service.getByNombre(nombre);
 	}
 	
+	@GetMapping(value = "/tipo/comidas", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Producto> doGetByTipoComidas() {
+		return service.getByTipoProducto(1);
+	}
+	@GetMapping(value = "/tipo/bebidas", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Producto> doGetByTipoBebidas() {
+		return service.getByTipoProducto(2);
+	}
+	@GetMapping(value = "/tipo/dulces", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Producto> doGetByTipoDulces() {
+		return service.getByTipoProducto(7);
+	}
+	
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Producto doPost(@RequestBody Producto producto) {
 		

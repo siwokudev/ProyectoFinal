@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>QTMeats_UserPage</title>
+<!-- Custom fonts for this theme -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css">
+<!-- Theme CSS -->
+<link href="css/freelancer.css" rel="stylesheet">
+<link href="css/alan.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+	<!-- Navigation -->
+	<nav
+		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top background-orange-gradient"
+		id="mainNav">
+		<div class="container">
+			<div class="row">
+				<div class="col-12" id="adminPageTitle">
+					<a class="navbar-brand js-scroll-trigger" href="#page-top">QTMEats</a>
+				</div>
+				<div class="col-12 collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto" id="adminNav">
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnComandaGrl">Comanda</a></li>
+
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnBebidasGrl">Bebidas</a></li>
+
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnDulcesGrl">Dulces</a></li>
+
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnComidasGrl">Comidas</a></li>
+
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnTipoBebidasGrl">Tipo de bebida</a></li>
+
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnTipoComidaGrl">Tipo de comida</a></li>
+
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="#" id="btnTipoDulceGrl">Tipo de dulces</a></li>
+
+						<!--Logout Button Nav-->
+						<li class="nav-item mx-0 mx-lg-1"><a
+							class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+							href="/">Logout</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<header>
+		<div id="resultRequest" >
+			<h1 class="display-1">Administrador</h1>
+		</div>
+	</header>
+
+	<!-- Modal para modificar comanda -->
+	<div id="modificarComandaModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Comanda</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">Modificar Estado</label>
+						<select class="form-control" id="estadoComandaSelect">
+							<option value="0">Recibida</option>
+							<option value="1">Lista</option>
+							<option value="2">Pagada</option>
+							<option value="3">Entregada</option>		
+						</select>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModComanda" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para modificar comida -->
+	<div id="modificarComidaModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Comida</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="comidaModNombre">Nombre </label>
+						<input id="comidaModNombre" type="text" value="">
+					</div>
+					<div class="form-group">
+						<label for="comidaModNombre">Precio </label>
+						<input id="comidaModPrecio" type="number" value="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModComida" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Contact Form JavaScript -->
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/contact_me.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="js/freelancer.min.js"></script>
+
+	<!-- <script src="js/script.js"></script> -->
+
+	<script src="js/adminPage/comanda.js"></script>
+	<script src="js/adminPage/comidas.js"></script>
+	<script src="js/adminPage/bebidas.js"></script>
+	<script src="js/adminPage/dulces.js"></script>
+	
+
+</body>
+
+</html>
