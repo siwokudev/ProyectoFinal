@@ -1,0 +1,41 @@
+	Navegacion
+/				abre el login
+/qtm				abre pagina principal
+/admin				abre la pagina del administrador
+
+	Usuario
+
+/usuario			consulta general(trae todos)
+/usuario/nombre/{nombre}	consulta por nombre
+/usuario/{id}			consulta por id
+/usuario/correo/{correo}	consulta por correo
+
+	Comanda
+/comanda
+/comadna/{id}
+/comanda/estado/{estado}
+
+	Producto
+/producto
+/producto/{id}
+/producto/nombre/{nombre}
+
+	Tipo bebida
+/tipo-bebida
+/tipo-bebida/{id}
+/tipo-bebida/tipo/{tipo}
+
+	Tipo Comida
+/tipo-comida
+/tipo-comida/{id}
+			falta la peticion por tipo (nombre del tipo de comida)
+
+	Tipo Dulces
+/tipo-dulces
+/tipo-dulces/{id}
+			falta peticion por tipo (nombre del tipo de dulce
+
+	Tipo producto
+/tipo-producto
+/tipo-producto/{id}
+			falta la peticion por tipo (nombre del tipo de producto)
