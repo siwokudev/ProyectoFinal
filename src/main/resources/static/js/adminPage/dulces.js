@@ -1,12 +1,25 @@
 $(document).ready(function() {
-	//alert("dulces funcionando");
+	//alert("comidas funcionando");
 	$("#btnDulcesGrl").on("click", requestDulces);
+	$("#btnModDulce").on("click", updateDulceSend);
 });
 
+let _selectedDulce;
 
+function addUpdateDulceEvent($element, dulce) {
+	$element.on("click", function() {
+		updateDulce(dulce);
+	});
+}
+
+function addDeleteDulceEvent($element, dulce) {
+	$element.on("click", function() {
+		deleteDulce(dulce);
+	});
+}
 
 function requestDulces() {
-	//alert("request dulces");
+	//alert("request comidas");
 	$.get("/producto/tipo/dulces", function(data) { // success callback
 		setDulces(data);
 	}).fail(function(err) {
@@ -32,9 +45,9 @@ function setDulces(producto) {
 	producto
 			.forEach(function(producto) {
 				const $btnModificar = $("<button class='btnModificar btn btn-primary' type='button'>Modificar</button>");
-				addUpdateEvent($btnModificar, producto);
+				addUpdateDulceEvent($btnModificar, producto);
 				const $btnBorrar = $("<button class='btnBorrar btn btn-danger' type='button'>Borrar</button>");
-				addDeleteEvent($btnBorrar, producto);
+				addDeleteDulceEvent($btnBorrar, producto);
 
 				// $tableBody.append($("<tr />").addClass(claseEstado) //para
 				// cambair el color dependiendo del estado
@@ -53,4 +66,45 @@ function setDulces(producto) {
 
 	$dulcesBody.append($header).append($table);
 	$("#resultRequest").empty().append($dulcesBody);
+}
+
+function updateDulces(dulce) {
+	_selectedDulce = dulce;
+	$("#dulceModNombre").val(dulce.nombre);
+	$("#dulceModPrecio").val(dulce.precio);
+
+	$("#modificarDulceModal").modal("show");
+}
+
+function updateDulceSend() {
+	alert("Update dulce send funcionalidad faltante");
+	const precio = parseInt($("#dulceModPrecio").val(), 10);
+	const nombre = $("#dulceModNombre").val();
+
+	$.ajax({
+		method : "PUT",
+		url : "/producto/" + _selectedDulce.id,
+		contentType : "application/json",
+		data : JSON.stringify({
+			nombre: nombre,
+			precio: precio
+		})
+	}).done(function(msg) {
+		requestDulce();
+		alert("Dulce Actualizada ");
+	}).fail(function(err) {
+		console.log(err);
+	});
+
+	$("#modificarDulceModal").modal("hide");
+}
+
+function deleteDulce(dulce) {
+	$.ajax({
+		method : "DELETE",
+		url : "/producto/" + dulce.id,
+	}).done(function(msg) {
+		requestDulces();
+		alert("Dulce borrado ");
+	});
 }
