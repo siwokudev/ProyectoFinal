@@ -2,6 +2,10 @@ $(document).ready(function() {
     var panelOne = $('.form-panel.two').height(),
       panelTwo = $('.form-panel.two')[0].scrollHeight;
   
+    $("#btnLogIn").on("click",function(){
+    	window.location.href="/qtm";
+    });
+    
     $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
       e.preventDefault();
   
