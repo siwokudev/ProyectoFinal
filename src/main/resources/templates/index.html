@@ -712,19 +712,20 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="cocaSelect" required>
+										<select class="form-control" id="opcionPapas" name="opcionPapas" required>
 											<option disabled selected value="">-- Elige el tipo
 												--</option>
-											<option value="Sandia">Sabritas</option>
-											<option value="Te verde">Takis</option>
-											<option value="Mango">Chips</option>
+											<option value="Sabritas">Sabritas</option>
+											<option value="Takis">Takis</option>
+											<option value="Chips">Chips</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosPapas">Comentarios</label>
+											<textarea id="comentariosPapas" name="comentariosPapas" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarPapas" name="btnAgregarPapas" type="button" value="Agregar"
 												class="btn btn-primary">
 										</p>
 									</div>
@@ -771,18 +772,19 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="galletaSelect" required>
+										<select class="form-control" id="opcionGalletas" name="opcionGalletas" required>
 											<option disabled selected value="">Elige el tipo --</option>
 											<option value="Emperador">Emperador</option>
 											<option value="Arcoiris">Arcoiris</option>
 											<option value="Canelitas">Canelitas</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosGalletas">Comentarios</label>
+											<textarea id="comentariosGalletas" name="comentariosGalletas" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarGalletas" name="btnAgregarGalletas" type="button" value="Agregar"
 												class="btn btn-primary">
 										</p>
 									</div>
@@ -829,7 +831,7 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="chocolateSelect" required>
+										<select class="form-control" id="opcionChocolates" name="opcionChocolates" required>
 											<option disabled selected value="">-- Elige el tipo
 												--</option>
 											<option value="Hershey">Hershey</option>
@@ -837,11 +839,12 @@
 											<option value="Reeses">Reese's</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosChocolates">Comentarios</label>
+											<textarea id="comentariosChocolates" name="comentariosChocolates" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarChocolates" name="btnAgregarChocolates" type="button" value="Agregar"
 												class="btn btn-primary">
 										</p>
 									</div>
