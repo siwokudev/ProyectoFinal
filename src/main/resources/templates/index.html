@@ -53,9 +53,7 @@
 					<!--Logout Button Nav-->
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-
 						href="/">Logout</a>
-
 					</li>
 				</ul>
 			</div>
@@ -343,73 +341,61 @@
 		<div class="container">
 
 			<!-- miOrden Section Heading -->
-			<h2
-				class="page-section-heading text-center text-uppercase text-secondary mb-0">Mi
-				Orden</h2>
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Mi Orden</h2>
 
 			<!-- Icon Divider -->
 			<div class="divider-custom">
 				<div class="divider-custom-line"></div>
-				<div class="divider-custom-icon">
-					<img src="img/icons/shopping-cart.png">
-				</div>
+					<div class="divider-custom-icon">
+						<img src="img/icons/shopping-cart.png">
+					</div>
 				<div class="divider-custom-line"></div>
 			</div>
-
 
 			<!-- Carrito Section Form -->
 			<div class="row">
 				<div class="col-lg-8 mx-auto">
-					<!-- contenedor de productos agregados -->
-					<div id="misProductos">
-						<!--Carrito Producto 1-->
-						<div class="miOrdenProducto">
-							<div class="row">
-								<div class="miOrdenProductoNombre col-8 col-md-10">
-									<h5 class="text-uppercase text-secondary">Nombre del
-										producto</h5>
-								</div>
-							</div>
-							<div class="row">
-								<div id="miOrdenResultado"
-									class="miOrdenProductoDescripcion text-secondary col-8 col-md-10">
+				
+					<!--Carrito Producto-->
+					<div class="row">
+						<div class="col-8 col-md-10">
+							<h4 class="text-uppercase text-secondary">Producto</h4>
+						</div>
+					</div>
+					
+					<div class="row">
+						<!--class="miOrdenProductoDescripcion-->
+						<div id="miOrdenNombre" class="text-secondary col-8 col-md-10">
 
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-10 col-sm-6 col-md-4 col-lg-4 col-xl-3">
-									<div class="row">
-										<div class="col-6  miOrdenProductoBoton">
-											<input type="button" value="Eliminar"
-												class="btn btn-secondary btn-sm" />
-										</div>
-									</div>
-								</div>
-								<!--<div class="col-2 col-sm-6 col-md-8 col-lg-8 col-xl-9"></div>-->
-							</div>
-							<hr class="miHR" />
+						</div>
+						<div id="miOrdenPrecio" class="text-secondary col-4 col-md-2">
+							
 						</div>
 					</div>
+					<hr class="miHR" />
+									
 					<!--Boton Pagar Orden-->
-					<div class="miOrdenTotal text-secondary">
-						<div class="row">
-							<div class="col-8 col-sm-10">
-								<h4>Total:</h4>
-							</div>
-							<div class="col-4 col-sm-2">
-								<h4>$140.00</h4>
-							</div>
+					<div class="row">
+						<div class="text-secondary col-8 col-sm-10">
+							<h4>Total:</h4>
+						</div>
+						<div class=" text-secondary col-4 col-sm-2">
+							<h4 id="miOrdenTotal"> </h4>
 						</div>
 					</div>
-					<form name="sentMessage" id="miOrdenForm" novalidate="novalidate">
-						<div class="form-group">
-							<input type="button" value="Pagar"
-								class="btn btn-primary btn-xl text-uppercase" id="btnPagar" />
+					<div class="row">
+					
+						<div class="text-secondary col-8 col-sm-10">
+							<form name="sentMessage" id="pagar" novalidate="novalidate">
+								<div class="form-group">
+									<input id="btnPagar" name="btnPagar" type="button" value="Generar Pedido"
+										class="btn btn-primary btn-xl text-uppercase" />
+								</div>
+							</form>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
-
 		</div>
 	</section>
 
@@ -493,7 +479,7 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="opcion" name="opcion"
+										<select class="form-control" id="opcionArizona" name="opcionArizona"
 											required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
@@ -502,12 +488,15 @@
 											<option value="Mango">Mango</option>
 										</select><br>
 										<p>
-											<textarea id="comentarios" name="comentarios"
-												class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentarios">Comentarios</label>
+											<textarea id="comentariosArizona" name="comentariosArizona"
+												class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<p>
-											<input id="btnAgregar" name="btnAgregar" type="button"
+
+											<input id="btnAgregarArizona" name="btnAgregarArizona" type="button"
 												value="Agregar al carrito" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+
 										</p>
 									</div>
 								</form>
@@ -519,7 +508,7 @@
 		</div>
 	</div>
 
-	<!-- Portfolio coca cola -->
+	<!-- Portfolio Refresco -->
 	<div class="portfolio-modal modal fade" id="portfolioModal2"
 		tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label"
 		aria-hidden="true">
@@ -537,7 +526,7 @@
 							<div class="col-lg-8">
 								<!-- Portfolio Modal - Title -->
 								<h2
-									class="portfolio-modal-title text-secondary text-uppercase mb-0">Coca-Cola</h2>
+									class="portfolio-modal-title text-secondary text-uppercase mb-0">Refresco</h2>
 								<!-- Icon Divider -->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -553,20 +542,23 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="cocaSelect" required>
+										<select class="form-control" id="opcionRefresco" name="opcionRefresco" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
-											<option value="Sandia">Coca-Cola</option>
-											<option value="Te verde">Sprite</option>
-											<option value="Mango">Manzanita</option>
+											<option value="Cocacola">Cocacola</option>
+											<option value="Sprite">Sprite</option>
+											<option value="Manzanita">Manzanita</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label  for="comentariosRefresco">Comentarios</label>
+											<textarea id="comentariosRefresco" name="comentariosRefresco" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+
+											<input id="btnAgregarRefresco" name="btnAgregarRefresco" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+
 										</p>
 									</div>
 								</form>
@@ -612,18 +604,19 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="cafeSelect" required>
+										<select class="form-control" id="opcionCafe" name="opcionCafe" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
 											<option value="Americano">Cafe Americano</option>
 											<option value="Moka">Cafe Moka</option>
-											<option value="Esspreso">Cafe Expresso</option>
+											<option value="Expreso">Cafe Expreso</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosCafe">Comentarios</label>
+											<textarea id="comentariosCafe" name="comentariosCafe" class="form-control" rows="4" cols="70"> </textarea>
 										</p>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarCafe" name="btnAgregarCafe" type="button" value="Agregar al carrito"
 												class="btn btn-primary">
 										</p>
 									</div>
