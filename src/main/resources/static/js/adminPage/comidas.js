@@ -54,7 +54,7 @@ function setComidas(producto) {
 				$tableBody.append($("<tr />").attr("id",
 						"comanda-" + producto.id).append(
 						$("<td />").text(producto.nombre)).append(
-						$("<td />").text(producto.tipoProducto.tipo)).append(
+						$("<td />").text(producto.tipoComida.tipo)).append(
 						$("<td />").text(producto.precio)).append(
 						$("<td />").append($btnModificar)).append(
 						$("<td />").append($btnBorrar))
@@ -77,7 +77,7 @@ function updateComida(comida) {
 }
 
 function updateComidaSend() {
-	alert("Update comida send funcionalidad faltante");
+	alert("Update comida");
 	const precio = parseInt($("#comidaModPrecio").val(), 10);
 	const nombre = $("#comidaModNombre").val();
 
@@ -87,10 +87,14 @@ function updateComidaSend() {
 		contentType : "application/json",
 		data : JSON.stringify({
 			nombre: nombre,
+			tipoProducto: _selectedComida.tipoProducto,
+			tipoComida: _selectedComida.tipoComida,
+			tipoBebida: _selectedComida.tipoBebida,
+			tipoDulces: _selectedComida.tipoDulce,
 			precio: precio
 		})
 	}).done(function(msg) {
-		requestComida();
+		requestComidas();
 		alert("Comida Actualizada ");
 	}).fail(function(err) {
 		console.log(err);

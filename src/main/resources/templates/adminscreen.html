@@ -72,8 +72,11 @@
 		</div>
 	</nav>
 	<header>
-		<div id="resultRequest" >
+		<div id="resultRequest" class="col-12">
 			<h1 class="display-1">Administrador</h1>
+		</div>
+		<div id="addRequest" class="col-12">
+			
 		</div>
 	</header>
 
@@ -103,6 +106,55 @@
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Cerrar</button>
 					<button id="btnModComanda" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para modificar tipo bebida -->
+	<div id="modificarTipoBebidaModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Tipo Bebida</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="tipoBebidaModNombre">Tipo </label>
+						<input id="tipoBebidaModNombre" type="text" value="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModTipoBebida" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para modificar tipo bebida -->
+	<div id="agregarModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Agregar nuevo</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="modalAgregarNuevo">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModAgregar" type="button" class="btn btn-primary">Agregar</button>
 				</div>
 			</div>
 		</div>
@@ -158,6 +210,7 @@
 	<script src="js/adminPage/comidas.js"></script>
 	<script src="js/adminPage/bebidas.js"></script>
 	<script src="js/adminPage/dulces.js"></script>
+	<script src="js/adminPage/tipoBebida.js"></script>
 	
 
 </body>
