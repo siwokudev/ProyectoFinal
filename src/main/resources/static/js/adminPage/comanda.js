@@ -55,7 +55,7 @@ function setComandas(comandas) {
 								comanda.productos.reduce(function(accum, prod) {
 									return accum.append($(
 											"<li class='listaProductos' />")
-											.text(prod.nombre));
+											.text(getTipoProducto(prod)+" "+prod.nombre));
 								}, $("<ul />")))).append(
 						$("<td />").text(estadoATexto(comanda.estado))).append(
 						$("<td />").text(comanda.usuario.telefono)).append(
@@ -69,6 +69,18 @@ function setComandas(comandas) {
 
 	$comandaBody.append($header).append($table);
 	$("#resultRequest").empty().append($comandaBody);
+}
+function getTipoProducto(producto){
+	switch (producto.tipoProducto.tipo) {
+	case "Comida":
+		return producto.tipoComida.tipo;
+	case "Bebida":
+		return producto.tipoBebida.tipo;
+	case "Dulce":
+		return producto.tipoDulce.tipo;
+	default:
+		return "";
+	}
 }
 
 function estadoATexto(estado) {
@@ -85,6 +97,8 @@ function estadoATexto(estado) {
 }
 
 function requestComandas() {
+	$("#addRequest").empty();
+	
 	$.get("/comanda", function(data) { // success callback
 		setComandas(data);
 	}).fail(function(err) {

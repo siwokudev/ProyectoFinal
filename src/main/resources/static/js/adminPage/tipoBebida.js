@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	//alert("tipoBebida funcionando");
+	////alert("tipoBebida funcionando");
 	$("#btnTipoBebidasGrl").on("click", requestTipoBebida);
 	$("#btnModTipoBebida").on("click", updateTipoBebidaSend);
 	
@@ -7,7 +7,12 @@ $(document).ready(function() {
 
 let _selectedTipoBebida;
 
-function botnAgregarDraw(){
+function bbotnAgregarBebidaErase(){
+	const $btnAgregar = $("<button id='btnAgregar' class='btnAgregar btn btn-success' type='button'>Agregar</button>");
+	$("#addRequest").empty();
+}
+
+function botnAgregarBebidaDraw(){
 	const $btnAgregar = $("<button id='btnAgregar' class='btnAgregar btn btn-success' type='button'>Agregar</button>");
 	$("#addRequest").empty().append($btnAgregar);
 	
@@ -17,16 +22,20 @@ function botnAgregarDraw(){
 			.append("<label for='modalTipoBebida'>Tipo </label>"+
 	"<input id='modalTipoBebida' type='text' value=''>"));
 	
-	$("#btnAgregar").on("click",btnAgregarModalShow);
+	$("#btnAgregar").on("click",btnAgregarBebidaModalShow);
 }
 
-function btnAgregarModalShow(){
+function btnAgregarBebidaModalShow(){
+	$("#botonModalAgregarContainer")
+	.empty()
+	.append($("<button id='btnModAgregarBebida' type='button' class='btn btn-primary'/>").text("Agregar"));
+
 	//modalAgregarNuevo
 	$("#agregarModal").modal("show");
-	$("#btnModAgregar").on("click",agregarNuevo)
+	$("#btnModAgregarBebida").on("click",agregarNuevoBebida)
 }
 
-function agregarNuevo(){
+function agregarNuevoBebida(){
 	const tipoEnModal = $("#modalTipoBebida").val();
 
 	$.ajax({
@@ -38,7 +47,7 @@ function agregarNuevo(){
 		})
 	}).done(function(msg) {
 		requestTipoBebida();
-		alert("TipoBebida Aagregada ");
+		//alert("TipoBebida Aagregada ");
 	}).fail(function(err) {
 		console.log(err);
 	});
@@ -59,17 +68,17 @@ function addDeleteTipoBebidaEvent($element, tipoBebida) {
 }
 
 function requestTipoBebida() {
-	botnAgregarDraw();
-	//alert("request tipoBebida");
+	botnAgregarBebidaDraw();
+	////alert("request tipoBebida");
 	$.get("/tipo-bebida", function(data) { // success callback
 		setTipoBebida(data);
 	}).fail(function(err) {
-		alert(err);
+		//alert(err);
 	});
 }
 
 function setTipoBebida(tipoBebida) {
-	//alert(JSON.stringify(tipoBebida));
+	////alert(JSON.stringify(tipoBebida));
 	const $tipoBebidaBody = $("<div class='col-12'/>");
 	const $header = $("<h2 />").text("TipoBebida");
 
@@ -94,7 +103,8 @@ function setTipoBebida(tipoBebida) {
 						"comanda-" + tipoBebida.id).append(
 						$("<td />").text(tipoBebida.tipo)).append(
 						$("<td />").append($btnModificar)).append(
-						$("<td />").append($btnBorrar))
+						$("<td />").append($btnBorrar)
+								)
 
 				);
 			});
@@ -114,8 +124,8 @@ function updateTipoBebida(tipoBebida) {
 function updateTipoBebidaSend() {
 	
 	const tipo = $("#tipoBebidaModNombre").val();
-	alert("Update tipoBebida: "+tipo);
-	alert("/tipo-bebida/" + _selectedTipoBebida.id);
+	//alert("Update tipoBebida: "+tipo);
+	//alert("/tipo-bebida/" + _selectedTipoBebida.id);
 	$.ajax({
 		method : "PUT",
 		url : "/tipo-bebida/" + _selectedTipoBebida.id,
@@ -125,7 +135,7 @@ function updateTipoBebidaSend() {
 		})
 	}).done(function(msg) {
 		requestTipoBebida();
-		alert("TipoBebida Actualizada ");
+		//alert("TipoBebida Actualizada ");
 	}).fail(function(err) {
 		console.log(err);
 	});
@@ -139,6 +149,6 @@ function deleteTipoBebida(tipoBebida) {
 		url : "/tipo-bebida/" + tipoBebida.id,
 	}).done(function(msg) {
 		requestTipoBebida();
-		alert("TipoBebida borrada ");
+		//alert("TipoBebida borrada ");
 	});
 }

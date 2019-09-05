@@ -138,6 +138,83 @@
 	</div>
 	
 	<!-- Modal para modificar tipo bebida -->
+	<div id="modificarTipoComidaModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Tipo Comida</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="tipoComidaModNombre">Tipo </label>
+						<input id="tipoComidaModNombre" type="text" value="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModTipoComida" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para modificar tipo bebida -->
+	<div id="modificarTipoDulceModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Tipo Dulce</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="tipoDulceModNombre">Tipo </label>
+						<input id="tipoDulceModNombre" type="text" value="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModTipoDulce" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para Agregar nuevo producto -->
+	<div id="agregarModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Agregar nuevo</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="modalAgregarNuevo">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+				<div id="botonModalAgregarContainer">
+					<button id="btnModAgregar" type="button" class="btn btn-primary">Agregar</button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para modificar tipo bebida -->
 	<div id="agregarModal" class="modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -160,7 +237,7 @@
 		</div>
 	</div>
 	
-	<!-- Modal para modificar comida -->
+	<!-- Modal para modificar Comidas -->
 	<div id="modificarComidaModal" class="modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -189,6 +266,68 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- Modal para modificar Bebidas -->
+	<div id="modificarBebidaModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Bebida</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="bebidaModNombre">Nombre </label>
+						<input id="bebidaModNombre" type="text" value="">
+					</div>
+					<div class="form-group">
+						<label for="bebidaModNombre">Precio </label>
+						<input id="bebidaModPrecio" type="number" value="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModBebida" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal para modificar Dulces -->
+	<div id="modificarDulceModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modificar Dulce</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="dulceModNombre">Nombre </label>
+						<input id="dulceModNombre" type="text" value="">
+					</div>
+					<div class="form-group">
+						<label for="dulceModNombre">Precio </label>
+						<input id="dulceModPrecio" type="number" value="">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Cerrar</button>
+					<button id="btnModDulce" type="button" class="btn btn-primary">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
@@ -211,6 +350,8 @@
 	<script src="js/adminPage/bebidas.js"></script>
 	<script src="js/adminPage/dulces.js"></script>
 	<script src="js/adminPage/tipoBebida.js"></script>
+	<script src="js/adminPage/tipoComida.js"></script>
+	<script src="js/adminPage/tipoDulce.js"></script>
 	
 
 </body>

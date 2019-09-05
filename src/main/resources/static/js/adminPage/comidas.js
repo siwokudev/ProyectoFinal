@@ -5,6 +5,76 @@ $(document).ready(function() {
 });
 
 let _selectedComida;
+let listaTipoComida;
+
+function botnAgregarComidaErase(){
+	//const $btnAgregarComida = $("<button id='btnAgregar' class='btnAgregar btn btn-success' type='button'>Agregar</button>");
+	$("#addRequest").empty();
+}
+
+
+function saveListaComidas(tipoComida){
+	listaTipoComida = tipoComida;
+}
+
+
+function botnAgregarComidaDraw(){
+	const $btnAgregarComida = $("<button id='btnAgregarComida' class='btnAgregar btn btn-success' type='button'>Agregar</button>");
+	$("#addRequest").empty().append($btnAgregarComida);
+	
+	
+	const $select = $("<div class='form-group'/>");
+	$select.append($("<label for='FormControlSelect'>Tipo Comidma</label>")).append(
+			$("<select class='form-control' id='FormControlSelect'>"));
+	
+	const $formBody = $("#modalAgregarNuevo");
+	$formBody.empty()
+		.append($("<div class='form-group'/>")
+			.append("<label for='modalComidaNombre'>Nombre </label>"+
+					"<input id='modalComidaNombre' type='text' value='' placeholder='Nombre'>")
+			.append("<label for='modalComidaTipo'>Tipo Comida</label>"+
+					"<input id='modalComidaTipo' type='text' value='' placeholder='Tipo de Comida'>")
+			.append("<label for='modalComidaPrecio'>Precio </label>"+
+					"<input id='modalComidaPrecio' type='number' value='0.0'>"));
+
+	$("#btnAgregarComida").on("click",btnAgregarComidaModalShow);
+}
+
+function btnAgregarComidaModalShow(){
+	$("#agregarModal").modal("show");
+	$("#btnModAgregar").on("click",agregarNuevoComida)
+}
+
+function agregarNuevoComida(){
+	const nombre = $("#modalComidaNombre").val();
+	const tipo = $("#modalComidaTipo").val();
+	const precio = $("#modalComidaPrecio").val();
+
+	$.ajax({
+		method : "POST",
+		url : "/producto",
+		contentType : "application/json",
+		data : JSON.stringify({
+			nombre:nombre,
+			tipoProducto:{
+				id:1 //Comida
+			},
+			tipoComida:{
+				id:4
+			},
+			tipoBebida:null,
+			tipoDulce:null,
+			precio:precio	
+		})
+	}).done(function(msg) {
+		requestComidas();
+		alert("Comida Aagregada ");
+	}).fail(function(err) {
+		console.log(err);
+	});
+	
+	$("#agregarModal").modal("hide");
+}
 
 function addUpdateComidaEvent($element, comida) {
 	$element.on("click", function() {
@@ -19,7 +89,8 @@ function addDeleteComidaEvent($element, comida) {
 }
 
 function requestComidas() {
-	//alert("request comidas");
+	botnAgregarComidaErase();
+	botnAgregarComidaDraw(listaTipoComida);
 	$.get("/producto/tipo/comidas", function(data) { // success callback
 		setComidas(data);
 	}).fail(function(err) {
@@ -77,7 +148,7 @@ function updateComida(comida) {
 }
 
 function updateComidaSend() {
-	alert("Update comida");
+	//alert("Update comida");
 	const precio = parseInt($("#comidaModPrecio").val(), 10);
 	const nombre = $("#comidaModNombre").val();
 
