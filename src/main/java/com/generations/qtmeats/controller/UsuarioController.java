@@ -33,8 +33,8 @@ public class UsuarioController {
 	}
 	
 	
-	@GetMapping(value = "/nombre/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Usuario doGetByName(@PathVariable("nombre") String nombre) {
+	@GetMapping(value = "/nombre/{alias}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Usuario doGetByName(@PathVariable("alias") String nombre) {
 		return service.getByName(nombre);
 	}
 	

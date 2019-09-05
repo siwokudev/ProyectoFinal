@@ -7,13 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.generations.qtmeats.model.Producto;
+import com.generations.qtmeats.model.TipoProducto;
 import com.generations.qtmeats.repository.ProductoRepository;
+import com.generations.qtmeats.repository.TipoProductoRepository;
 
 @Service
 public class ProductoService {
 	
 	@Autowired
 	private ProductoRepository repo;
+	
+	private TipoProductoRepository tipoProdRepo;
 	
 	public List<Producto> getAll(){
 		return (List<Producto>) repo.findAll();
@@ -45,6 +49,18 @@ public class ProductoService {
 		}
 		
 		return producto;
+	}
+	
+	public List<Producto> getByTipoProducto(Integer id) {
+		TipoProducto tipoProducto = new TipoProducto();
+		if(id == 1) {
+			tipoProducto.setId(1);
+		} else if(id == 2) {
+			tipoProducto.setId(2);
+		} else {
+			tipoProducto.setId(7);
+		}
+		return repo.findByTipoProducto(tipoProducto);
 	}
 	
 	public Producto save(Producto producto) {

@@ -37,6 +37,7 @@ function enviarPetArizona()
 function enviarPetRefresco()
 {
     console.log("boton picado" + btnAgregar.value);
+
     var opcion = document.querySelector("#opcionRefresco").value;
     var comentarios = document.querySelector("#comentariosRefresco").value;
     
@@ -56,6 +57,9 @@ function enviarPetCafe()
     console.log(opcion, comentarios);
     
     
+
+    var opcion = document.querySelector("#opcion").value;
+
     xhr.open("GET", "producto/nombre/" + opcion);
 	xhr.onload = functionCallBack;
 	xhr.send(null);
@@ -115,11 +119,11 @@ function mandarComanda()
 
 function pagoStatus()
 {
-	
 	console.log("boton pagar" + xhr.status);
 	if(xhr.status == 200)
 	{
-		Alert("Pedido generado exitosamente");
+		alert("Pedido generado exitosamente");
+
 	}
 }
 
