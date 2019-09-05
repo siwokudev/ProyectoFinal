@@ -617,7 +617,7 @@
 										</p>
 										<p>
 											<input id="btnAgregarCafe" name="btnAgregarCafe" type="button" value="Agregar al carrito"
-												class="btn btn-primary">
+												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
 								</form>
@@ -658,24 +658,25 @@
 									<div class="divider-custom-line"></div>
 								</div>
 								<!-- Portfolio Modal - Image -->
-								<img class="img-fluid rounded mb-5" src="/static/img/menu/Dulces/Galletas.png" alt="">
+								<img class="img-fluid rounded mb-5" src="img/menu/Dulces/papas.png" alt="">
 								<!-- Portfolio Modal - Text -->
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="cocaSelect" required>
+										<select class="form-control" id="opcionPapas" name="opcionPapas" required>
 											<option disabled selected value="">-- Elige el tipo
 												--</option>
-											<option value="Sandia">Sabritas</option>
-											<option value="Te verde">Takis</option>
-											<option value="Mango">Chips</option>
+											<option value="Sabritas">Sabritas</option>
+											<option value="Takis">Takis</option>
+											<option value="Chips">Chips</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosPapas">Comentarios</label>
+											<textarea id="comentariosPapas" name="comentariosPapas" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarPapas" name="btnAgregarPapas" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -722,18 +723,19 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="galletaSelect" required>
+										<select class="form-control" id="opcionGalletas" name="opcionGalletas" required>
 											<option disabled selected value="">Elige el tipo --</option>
 											<option value="Emperador">Emperador</option>
 											<option value="Arcoiris">Arcoiris</option>
 											<option value="Canelitas">Canelitas</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosGalletas">Comentarios</label>
+											<textarea id="comentariosGalletas" name="comentariosGalletas" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarGalletas" name="btnAgregarGalletas" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -775,24 +777,25 @@
 								</div>
 								<!-- Portfolio Modal - Image -->
 								<img class="img-fluid rounded mb-5"
-									src="img/portfolio/submarine.png" alt="">
+									src="img/menu/Dulces/Chocolate.png" alt="">
 								<!-- Portfolio Modal - Text -->
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="chocolateSelect" required>
+										<select class="form-control" id="opcionChocolates" name="opcionChocolates" required>
 											<option disabled selected value="">-- Elige el tipo
 												--</option>
 											<option value="Hershey">Hershey</option>
-											<option value="Snicker">Snicker</option>
+											<option value="Crunch">Crunch</option>
 											<option value="Reeses">Reese's</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosChocolates">Comentarios</label>
+											<textarea id="comentariosChocolates" name="comentariosChocolates" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarChocolates" name="btnAgregarChocolates" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -824,7 +827,7 @@
 							<div class="col-lg-8">
 								<!-- Portfolio Modal - Title -->
 								<h2
-									class="portfolio-modal-title text-secondary text-uppercase mb-0">Ensalada
+									class="portfolio-modal-title text-secondary text-uppercase mb-0">Ensalada con
 									Verduras</h2>
 								<!-- Icon Divider -->
 								<div class="divider-custom">
@@ -841,7 +844,7 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="ensaladaSelect" required>
+										<select class="form-control" id="opcionVerdura" name="opcionVerdura" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
 											<option value="Verdura">Verdura</option>
@@ -849,11 +852,12 @@
 											<option value="Cesar">Cesar</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosVerdura">Comentarios</label>
+											<textarea id="comentariosVerdura" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarVerdura" name="btnAgregarVerdura" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -884,7 +888,7 @@
 							<div class="col-lg-8">
 								<!-- Portfolio Modal - Title -->
 								<h2
-									class="portfolio-modal-title text-secondary text-uppercase mb-0">Ensalada
+									class="portfolio-modal-title text-secondary text-uppercase mb-0">Ensalada con
 									Fruta</h2>
 								<!-- Icon Divider -->
 								<div class="divider-custom">
@@ -896,12 +900,12 @@
 								</div>
 								<!-- Portfolio Modal - Image -->
 								<img class="img-fluid rounded mb-5"
-									src="img/menu/Ensalada/ensalada_pollo.png" alt="">
+									src="img/menu/Ensalada/ensalada_fruta.png" alt="">
 								<!-- Portfolio Modal - Text -->
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="ensaladaFrutaSelect" required>
+										<select class="form-control" id="opcionFruta" name="opcionFruta" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
 											<option value="Manzana">Manzana</option>
@@ -909,11 +913,12 @@
 											<option value="Bionico">Bionico</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosFruta">Comentarios</label>
+											<textarea id="comentariosFruta" name="comentariosFruta" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarFruta" name="btnAgregarFruta" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -961,19 +966,20 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="quesadillaSelect" required>
+										<select class="form-control" id="opcionQuesadilla" name="opcionQuesadilla" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
-											<option value="Jamon">Jamon</option>
-											<option value="Pavo">Pavo</option>
-											<option value="Chilorio">Chilorio</option>
+											<option value="Qjamon">Jamon</option>
+											<option value="Qpavo">Pavo</option>
+											<option value="Qchilorio">Chilorio</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosQuesadilla">Comentarios</label>
+											<textarea id="comentariosQuesadilla" name="comentariosQuesadilla" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarQuesadilla" name="btnAgregarQuesadilla" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -1020,19 +1026,20 @@
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="sandwichSelect" required>
+										<select class="form-control" id="opcionSandwich" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
-											<option value="Jamon">Jamón</option>
-											<option value="Pavo">Pavo</option>
-											<option value="Atun">Atún</option>
+											<option value="Sjamon">Jamón</option>
+											<option value="Spavo">Pavo</option>
+											<option value="Satun">Atún</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosSandwich">Comentarios</label>
+											<textarea id="comentariosSandwich" name="comentariosSandwich"class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarSandwich" name="btnAgregarSandwich" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
@@ -1063,7 +1070,7 @@
 							<div class="col-lg-8">
 								<!-- Portfolio Modal - Title -->
 								<h2
-									class="portfolio-modal-title text-secondary text-uppercase mb-0">Molletes</h2>
+									class="portfolio-modal-title text-secondary text-uppercase mb-0">Pizza</h2>
 								<!-- Icon Divider -->
 								<div class="divider-custom">
 									<div class="divider-custom-line"></div>
@@ -1074,12 +1081,12 @@
 								</div>
 								<!-- Portfolio Modal - Image -->
 								<img class="img-fluid rounded mb-5"
-									src="img/menu/Comida/comida_mollete.png" alt="">
+									src="img/menu/Comida/comida_pizza.png" alt="">
 								<!-- Portfolio Modal - Text -->
 								<br>
 								<form action="" method="POST">
 									<div class="form-group">
-										<select class="form-control" id="pizzaSelect" required>
+										<select class="form-control" id="opcionPizza" name="opcionPizza" required>
 											<option disabled selected value="">-- Elige el sabor
 												--</option>
 											<option value="Pepperoni">Pepperoni</option>
@@ -1087,11 +1094,12 @@
 											<option value="Margarita">Margarita</option>
 										</select><br>
 										<p>
-											<textarea class="form-control" rows="4" cols="70">Comentarios...</textarea>
+											<label for="comentariosPizza">Comentarios</label>
+											<textarea id="comentariosPizza" name="comentariosPizza" class="form-control" rows="4" cols="70"></textarea>
 										</p>
 										<br>
 										<p>
-											<input id="btnAgregar" type="submit" value="Agregar"
+											<input id="btnAgregarPizza" name="btnAgregarPizza" type="button" value="Agregar al carrito"
 												class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 										</p>
 									</div>
