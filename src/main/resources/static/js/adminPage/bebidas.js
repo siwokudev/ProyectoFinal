@@ -20,6 +20,7 @@ function addDeleteBebidaEvent($element, bebida) {
 
 function requestBebidas() {
 	//alert("request comidas");
+	$("#addRequest").empty();
 	$.get("/producto/tipo/bebidas", function(data) { // success callback
 		setBebidas(data);
 	}).fail(function(err) {
@@ -77,7 +78,7 @@ function updateBebida(bebida) {
 }
 
 function updateBebidaSend() {
-	alert("Update bebida send funcionalidad faltante");
+	//alert("Update bebida "+_selectedBebida.id);
 	const precio = parseInt($("#bebidaModPrecio").val(), 10);
 	const nombre = $("#bebidaModNombre").val();
 
@@ -87,10 +88,14 @@ function updateBebidaSend() {
 		contentType : "application/json",
 		data : JSON.stringify({
 			nombre: nombre,
+			tipoProducto: _selectedBebida.tipoProducto,
+			tipoComida: _selectedBebida.tipoComida,
+			tipoBebida: _selectedBebida.tipoBebida,
+			tipoDulces: _selectedBebida.tipoDulce,
 			precio: precio
 		})
 	}).done(function(msg) {
-		requestBebida();
+		requestBebidas();
 		alert("Bebida Actualizada ");
 	}).fail(function(err) {
 		console.log(err);

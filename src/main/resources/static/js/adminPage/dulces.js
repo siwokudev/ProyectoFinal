@@ -8,7 +8,7 @@ let _selectedDulce;
 
 function addUpdateDulceEvent($element, dulce) {
 	$element.on("click", function() {
-		updateDulce(dulce);
+		updateDulces(dulce);
 	});
 }
 
@@ -20,6 +20,7 @@ function addDeleteDulceEvent($element, dulce) {
 
 function requestDulces() {
 	//alert("request comidas");
+	$("#addRequest").empty();
 	$.get("/producto/tipo/dulces", function(data) { // success callback
 		setDulces(data);
 	}).fail(function(err) {
@@ -77,7 +78,7 @@ function updateDulces(dulce) {
 }
 
 function updateDulceSend() {
-	alert("Update dulce send funcionalidad faltante");
+	alert("Update dulce ");
 	const precio = parseInt($("#dulceModPrecio").val(), 10);
 	const nombre = $("#dulceModNombre").val();
 
@@ -87,10 +88,14 @@ function updateDulceSend() {
 		contentType : "application/json",
 		data : JSON.stringify({
 			nombre: nombre,
+			tipoProducto: _selectedDulce.tipoProducto,
+			tipoComida: _selectedDulce.tipoComida,
+			tipoBebida: _selectedDulce.tipoBebida,
+			tipoDulces: _selectedDulce.tipoDulce,
 			precio: precio
 		})
 	}).done(function(msg) {
-		requestDulce();
+		requestDulces();
 		alert("Dulce Actualizada ");
 	}).fail(function(err) {
 		console.log(err);
